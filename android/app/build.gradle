@@ -49,6 +49,10 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders = [
+            naverClientId: project.NAVER_CLIENT_ID,
+            naverClientSecret: project.NAVER_CLIENT_SECRET
+        ]
     }
 
     buildTypes {
@@ -65,3 +69,8 @@ flutter {
 }
 
 dependencies {}
+
+ext {
+    NAVER_CLIENT_ID = System.getenv("NAVER_CLIENT_ID") ?: project.findProperty("NAVER_CLIENT_ID")
+    NAVER_CLIENT_SECRET = System.getenv("NAVER_CLIENT_SECRET") ?: project.findProperty("NAVER_CLIENT_SECRET")
+}
