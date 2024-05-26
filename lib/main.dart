@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+癤퓁mport 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/services.dart';
 import 'screens/home_screen.dart';
@@ -6,7 +6,6 @@ import 'screens/home_screen.dart';
 void main() async {
   await dotenv.load(fileName: ".env");
 
-  // iOS의 UserDefaults에 환경 변수를 설정합니다.
   const platform = MethodChannel('flutter/app');
   await platform.invokeMethod('setEnvironmentVariables', {
     'NAVER_CLIENT_ID': dotenv.env['NAVER_CLIENT_ID'],
